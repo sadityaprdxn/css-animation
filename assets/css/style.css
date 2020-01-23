@@ -118,84 +118,82 @@ li {
 /*=================================
   main styling starts here
 =================================*/
-.window{
+.window {
   width: 20%;
   height: 550px;
+  border: 1px solid rgba(0,0,0,1);
   margin: 10px auto;
+  overflow: hidden;
+  position: relative;
   background: url(bg.jpg) 50% 50% no-repeat;
   background-size: cover;
-  border: 1px solid rgba(0,0,0,1);
-  position: relative;
-  overflow: hidden;
 }
 
-.window figure:first-child{
+/* logo fixing */
+
+.window figure:first-child {
   width: 30%;
   margin: 30px auto 0;
 }
 
+/* table animation */
 
-h1 ~ figure {
-  display: none;
-}
-
-.window h1:nth-child(3),
-.window h1:nth-child(4),
-.window h1:nth-child(5){
-  display: none;
-}
-
- .window figure:nth-child(6){
+ .window figure:nth-child(6) {
+  width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
-  animation-name: table;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: both;
-  display: block;
+  -webkit-animation: table 1.5s ease-out forwards;
+          animation: table 1.5s ease-out forwards;
 }
 
-@keyframes table{
-  from { opacity: 0;}
-  to { opacity: 1;}
+@-webkit-keyframes table {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
 }
 
-  .window figure:nth-child(7){
+@keyframes table {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+}
+
+/* plate animation */
+
+  .window figure:nth-child(7) {
+  width: 90%;
   position: absolute;
   bottom: 15px;
   left: -500px;
-  width: 90%;
-  animation-name: plate;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 1s;
-  display: block;
+  -webkit-animation: plate 3s linear 1s;
+          animation: plate 3s linear 1s;
 }
 
-@keyframes plate{
+@-webkit-keyframes plate {
   0%   { bottom:15px; left:-500px;}
   10%  { bottom:15px; left:-32px;}
   90%  { bottom:15px; left:-32px;}
   100% { bottom:15px; left:-500px;}
 }
 
-.window figure:nth-child(8){
-  position: absolute;
-  bottom: 85px;
-  right: -500px;
-  width: 70%;
-  animation-name: sadsonali;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 1.5s;
-  animation-timing-function:ease-out;
-  display: block;
+@keyframes plate {
+  0%   { bottom:15px; left:-500px;}
+  10%  { bottom:15px; left:-32px;}
+  90%  { bottom:15px; left:-32px;}
+  100% { bottom:15px; left:-500px;}
 }
 
-@keyframes sadsonali{
+/* sasonali animation */
+
+.window figure:nth-child(8) {
+  width: 70%;
+  position: absolute;
+  right: -500px;
+  bottom: 85px;
+  -webkit-animation: sadsonali 3s ease-in 1.5s;
+          animation: sadsonali 3s ease-in 1.5s;
+}
+
+@-webkit-keyframes sadsonali {
   0%   { bottom:85px; right:-500px;}
   10%  { bottom:85px; right:-10px;}
   40%  { bottom:85px; right:0px;}
@@ -203,102 +201,120 @@ h1 ~ figure {
   100% { bottom:85px; right:-500px;}
 }
 
+@keyframes sadsonali {
+  0%   { bottom:85px; right:-500px;}
+  10%  { bottom:85px; right:-10px;}
+  40%  { bottom:85px; right:0px;}
+  85%  { bottom:85px; right:0px;}
+  100% { bottom:85px; right:-500px;}
+}
+
+/* heading one animation */
+
 .window h1:nth-child(2) {
+  width: 70%;
   position: absolute;
   top: 110px;
   left: -300px;
-  width: 70%;
-  text-transform: capitalize;
   color: crimson;
   font-size: 30px;
+  text-transform: capitalize;
   text-align: center;
-  animation-name: heading-one;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 1.5s;
-  animation-timing-function:ease-out;
-  display: block;
+  -webkit-animation: heading-one 3s ease-in 1.5s ;
+          animation: heading-one 3s ease-in 1.5s ;
 }
 
-@keyframes heading-one{
+@-webkit-keyframes heading-one {
   0%   { top:110px; left:-300px;}
-  10%  { top:110px; left: 50%; transform: translateX(-53%);}
-  40%  { top:110px; left: 50%; transform: translateX(-50%);}
-  85%  { top:110px; left: 50%; transform: translateX(-50%);}
+  10%  { top:110px; left: 50%; -webkit-transform: translateX(-53%); transform: translateX(-53%);}
+  40%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  85%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  100% { top:110px; left:-500px;}
+}
+
+@keyframes heading-one {
+  0%   { top:110px; left:-300px;}
+  10%  { top:110px; left: 50%; -webkit-transform: translateX(-53%); transform: translateX(-53%);}
+  40%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  85%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
   100% { top:110px; left:-500px;}
 } 
 
+/* sandwich animation */
+
 .window figure:nth-child(9) {
+  width: 70%;
   position: absolute;
+  z-index: 1;
   top: 460px;
   left: -200px;
-  width: 70%;
   text-transform: capitalize;
   color: crimson;
   font-size: 30px;
   text-align: center;
-  animation-name: sandwich-one;
-  animation-duration: 8.7s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 3.8s;
-  display: block;
-  z-index: 1;
+  -webkit-animation: sandwich-one 8.7s 3.8s;
+          animation: sandwich-one 8.7s 3.8s;
 }
 
-@keyframes sandwich-one{
+@-webkit-keyframes sandwich-one {
   0%   { left:-200px;}
-  5%  { left:-30px;}
+  5%   { left:-30px;}
+  95%  { left:-30px;}
+  100% { left:-250px;}
+}
+
+@keyframes sandwich-one {
+  0%   { left:-200px;}
+  5%   { left:-30px;}
   95%  { left:-30px;}
   100% { left:-250px;}
 }
 
 .window figure:nth-child(10) {
+  width: 45%;
   position: absolute;
+  z-index: 1;
   top: 475px;
   left: -170px;
-  width: 45%;
-  text-transform: capitalize;
-  color: crimson;
-  font-size: 30px;
-  text-align: center;
-  animation-name: sandwich-two;
-  animation-duration: 8.7s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 3.8s;
-  display: block;
-  z-index: 1;
+  -webkit-animation: sandwich-two 8.7s 3.8s ;
+  animation: sandwich-two 8.7s 3.8s ;
 }
 
-@keyframes sandwich-two{
+@-webkit-keyframes sandwich-two{
   0%   { left:-170px;}
-  5%  { left:0;}
+  5%   { left:0;}
   95%  { left:0;}
   100% { left:-220px;}
 
 }
 
+@keyframes sandwich-two{
+  0%   { left: -170px;}
+  5%   { left: 0;}
+  95%  { left: 0;}
+  100% { left: -220px;}
+
+}
 
 .window figure:nth-child(11) {
+  width: 45%;
   position: absolute;
+  z-index: 2;
   top: 460px;
   left: -166px;
-  width: 45%;
-  text-transform: capitalize;
-  color: crimson;
-  font-size: 30px;
-  text-align: center;
-  animation-name: sandwich-three;
-  animation-duration: 8.7s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 3.8s;
-  /* animation-timing-function:ease-out; */
-  /* animation-fill-mode:; */
-  display: block;
-  z-index: 2;
+  -webkit-animation: sandwich-three 8.7s 3.8s ;
+          animation: sandwich-three 8.7s 3.8s ;
+}
+
+@-webkit-keyframes sandwich-three{
+  0%   { left:-166px;}
+  5%   { left:1px;}
+  10%  { left:1px; top:460px;}
+  15%  { left:1px; top:400px;}
+  25%  { left:1px; top:400px;}
+  30%  { left:1px; top:450px;}
+  95%  { left:1px; top:450px;}
+  100% { left:-216px; top:450px;}
 }
 
 @keyframes sandwich-three{
@@ -313,23 +329,27 @@ h1 ~ figure {
 }
 
 .window figure:nth-child(12) {
+  width: 30%;
   position: absolute;
+  z-index: 2;
   top: 445px;
   left: -166px;
-  width: 30%;
-  text-transform: capitalize;
-  color: crimson;
-  font-size: 30px;
-  text-align: center;
-  animation-name: knife;
-  animation-duration: 8.7s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 3.8s;
-  display: block;
-  z-index: 2;
   opacity: 0;
-  transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-animation: knife 8.7s 3.8s;
+          animation: knife 8.7s 3.8s;
+}
+
+@-webkit-keyframes knife{
+  0%   { left:-166px; opacity: 0;}
+  5%   { left:1px;}
+  10%  { left:1px;}
+  14%  { top:445px;left:10px; opacity: 0;}
+  15%  { top:445px;left:10px; opacity: 1;}
+  25%  { top:450px;left:76px; opacity: 1;}
+  26%  { top:450px;left:76px; opacity: 0;}
+  100% { left:-216px; opacity: 0;}
 }
 
 @keyframes knife{
@@ -344,21 +364,24 @@ h1 ~ figure {
 }
 
 .window figure:nth-child(13) {
+  width: 45%;
   position: absolute;
+  z-index: 1;
   top: 466px;
   left: -166px;
-  width: 45%;
-  text-transform: capitalize;
-  color: crimson;
-  font-size: 30px;
-  text-align: center;
-  animation-name: mayo;
-  animation-duration: 8.7s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 3.8s;
-  display: block;
-  z-index: 1;
+  -webkit-animation: mayo 8.7s 3.8s ;
+          animation: mayo 8.7s 3.8s ;
+}
+
+@-webkit-keyframes mayo{
+  0%   { left:-166px; opacity: 0;}
+  5%   { left:1px;}
+  10%  { left:1px;}
+  15%  { left:1px; opacity: 0;}
+  25%  { left:1px; opacity: 1;}
+  30%  { left:1px;}
+  95%  { left:1px;}
+  100% { left:-216px; opacity: 1;}
 }
 
 @keyframes mayo{
@@ -372,25 +395,23 @@ h1 ~ figure {
   100% { left:-216px; opacity: 1;}
 }
 
-
-
-
-
-
-
+/* happysonali animation */
 
 .window figure:nth-child(14){
-  position: absolute;
-  bottom: 85px;
-  right: -500px;
   width: 70%;
-  animation-name: happysonali;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 6.5s;
-  animation-timing-function:ease-out;
-  display: block;
+  position: absolute;
+  right: -500px;
+  bottom: 85px;
+  -webkit-animation: happysonali 3s ease-in 6.5s ;
+          animation: happysonali 3s ease-in 6.5s ;
+}
+
+@-webkit-keyframes happysonali{
+  0%   { bottom:85px; right:-500px;}
+  10%  { bottom:85px; right:-10px;}
+  40%  { bottom:85px; right:-1px;}
+  85%  { bottom:85px; right:-1px;}
+  100% { bottom:85px; right:-500px;}
 }
 
 @keyframes happysonali{
@@ -401,50 +422,54 @@ h1 ~ figure {
   100% { bottom:85px; right:-500px;}
 }
 
+/* heading two animation */
+
 .window h1:nth-child(3) {
+  width: 70%;
   position: absolute;
   top: 110px;
   left: -300px;
-  width: 70%;
-  text-transform: capitalize;
   color: crimson;
   font-size: 30px;
+  text-transform: capitalize;
   text-align: center;
-  animation-name: heading-two;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 6.5s;
-  animation-timing-function:ease-out;
-  display: block;
+  -webkit-animation: heading-two 3s ease-in 6.5s ;
+          animation: heading-two 3s ease-in 6.5s ;
+}
+
+@-webkit-keyframes heading-two{
+  0%   { top:110px; left:-300px;}
+  10%  { top:110px; left: 50%; -webkit-transform: translateX(-53%); transform: translateX(-53%);}
+  40%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  85%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  100% { top:110px; left:-500px;}
 }
 
 @keyframes heading-two{
   0%   { top:110px; left:-300px;}
-  10%  { top:110px; left: 50%; transform: translateX(-53%);}
-  40%  { top:110px; left: 50%; transform: translateX(-50%);}
-  85%  { top:110px; left: 50%; transform: translateX(-50%);}
+  10%  { top:110px; left: 50%; -webkit-transform: translateX(-53%); transform: translateX(-53%);}
+  40%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  85%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
   100% { top:110px; left:-500px;}
 }
 
-
-
-
-
-
+/* chef animation */
 
 .window figure:nth-child(15){
-  position: absolute;
-  bottom: 85px;
-  right: -500px;
   width: 70%;
-  animation-name: chef;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 9.5s;
-  animation-timing-function:ease-out;
-  display: block;
+  position: absolute;
+  right: -500px;
+  bottom: 85px;
+  -webkit-animation: chef 3s ease-in 9.5s ;
+          animation: chef 3s ease-in 9.5s ;
+}
+
+@-webkit-keyframes chef{
+  0%   { bottom:85px; right:-500px;}
+  10%  { bottom:85px; right:-10px;}
+  40%  { bottom:85px; right:-1px;}
+  85%  { bottom:85px; right:-1px;}
+  100% { bottom:85px; right:-500px;}
 }
 
 @keyframes chef{
@@ -455,114 +480,112 @@ h1 ~ figure {
   100% { bottom:85px; right:-500px;}
 }
 
+/* heading three animation */
+
 .window h1:nth-child(4) {
+  width: 100%;
   position: absolute;
   top: 110px;
   left: -300px;
-  width: 100%;
-  text-transform: capitalize;
   color: crimson;
   font-size: 30px;
+  text-transform: capitalize;
   text-align: center;
-  animation-name: heading-three;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 9.5s;
-  animation-timing-function:ease-out;
-  display: block;
+  -webkit-animation: heading-three 3s ease-in 9.5s;
+          animation: heading-three 3s ease-in 9.5s;
+}
+
+@-webkit-keyframes heading-three{
+  0%   { top:110px; left:-300px;}
+  10%  { top:110px; left: 50%; -webkit-transform: translateX(-53%); transform: translateX(-53%);}
+  40%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  85%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  100% { top:110px; left:-500px;}
 }
 
 @keyframes heading-three{
   0%   { top:110px; left:-300px;}
-  10%  { top:110px; left: 50%; transform: translateX(-53%);}
-  40%  { top:110px; left: 50%; transform: translateX(-50%);}
-  85%  { top:110px; left: 50%; transform: translateX(-50%);}
+  10%  { top:110px; left: 50%; -webkit-transform: translateX(-53%); transform: translateX(-53%);}
+  40%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  85%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
   100% { top:110px; left:-500px;}
 }
 
-
-
-
-
-
-
+/* veg mayo animation */
 
 .window figure:nth-child(16){
-  position: absolute;
-  bottom: 45px;
-  right: -500px;
   width: 35%;
-  animation-name: veg-mayo;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 12.5s;
-  animation-timing-function:ease-out;
-  display: block;
-  animation-fill-mode: both;
+  position: absolute;
+  right: -500px;
+  bottom: 45px;
+  -webkit-animation: veg-mayo 3s ease-out 12.5s forwards;
+          animation: veg-mayo 3s ease-out 12.5s forwards;
+}
+
+@-webkit-keyframes veg-mayo{
+  0%   { bottom:45px; right:-500px;}
+  10%  { bottom:45px; right:50%; -webkit-transform: translateX(55%); transform: translateX(55%);}
+  40%  { bottom:45px; right:50%; -webkit-transform: translateX(50%); transform: translateX(50%);}
+  85%  { bottom:45px; right:50%; -webkit-transform: translateX(50%); transform: translateX(50%);}
+  100% { bottom:45px; right:50%; -webkit-transform: translateX(50%); transform: translateX(50%);}
 }
 
 @keyframes veg-mayo{
   0%   { bottom:45px; right:-500px;}
-  10%  { bottom:45px; right:50%; transform: translateX(55%);}
-  40%  { bottom:45px; right:50%; transform: translateX(50%);}
-  85%  { bottom:45px; right:50%; transform: translateX(50%);}
-  100% { bottom:45px; right:50%; transform: translateX(50%);}
+  10%  { bottom:45px; right:50%; -webkit-transform: translateX(55%); transform: translateX(55%);}
+  40%  { bottom:45px; right:50%; -webkit-transform: translateX(50%); transform: translateX(50%);}
+  85%  { bottom:45px; right:50%; -webkit-transform: translateX(50%); transform: translateX(50%);}
+  100% { bottom:45px; right:50%; -webkit-transform: translateX(50%); transform: translateX(50%);}
 }
 
+/* heading four animation */
 
 .window h1:nth-child(5) {
+  width: 70%;
   position: absolute;
   top: 110px;
   left: -300px;
-  width: 70%;
-  text-transform: capitalize;
   color: crimson;
   font-size: 30px;
+  text-transform: capitalize;
   text-align: center;
-  animation-name: heading-four;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 12.5s;
-  animation-timing-function:ease-out;
-  display: block;
-  animation-fill-mode: both;
+  -webkit-animation: heading-four 3s ease-in 12.5s forwards;
+          animation: heading-four 3s ease-in 12.5s forwards;
 }
 
-@keyframes heading-four{
+@-webkit-keyframes heading-four {
   0%   { top:110px; left:-300px;}
-  10%  { top:110px; left: 50%; transform: translateX(-53%);}
-  40%  { top:110px; left: 50%; transform: translateX(-50%);}
-  85%  { top:110px; left: 50%; transform: translateX(-50%);}
-  100% { top:110px; left: 50%; transform: translateX(-50%);}
+  10%  { top:110px; left: 50%; -webkit-transform: translateX(-53%); transform: translateX(-53%);}
+  40%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  85%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  100% { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
 }
 
+@keyframes heading-four {
+  0%   { top:110px; left:-300px;}
+  10%  { top:110px; left: 50%; -webkit-transform: translateX(-53%); transform: translateX(-53%);}
+  40%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  85%  { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+  100% { top:110px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+}
 
-
-
-
-
-
+/* hat animation */
 
 .window figure:nth-child(17) {
+  width: 41%;
   position: absolute;
   top: 190px;
   left: -300px;
-  width: 41%;
-  text-transform: capitalize;
-  color: crimson;
-  font-size: 30px;
-  text-align: center;
-  animation-name: hat;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-delay: 14s;
-  animation-timing-function:ease-out;
-  display: block;
-  animation-fill-mode: both;
+  -webkit-animation: hat 2s ease-out 14s forwards;
+          animation: hat 2s ease-out 14s forwards;
+}
+
+@-webkit-keyframes hat{
+  0%   { top:190px; left:-300px;}
+  10%  { top:190px; left: 97px;}
+  40%  { left: 97px;}
+  85%  { left: 97px;}
+  100% { top:287px; left: 97px;}
 }
 
 @keyframes hat{
@@ -573,11 +596,35 @@ h1 ~ figure {
   100% { top:287px; left: 97px;}
 }
 
+/* recipe button animation */
 
+.window a:nth-child(18) {
+  width: 41%;
+  padding: 8px 7%;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  left: -300px;
+  background-color: #6600CC;
+  color: #FFFFFF;
+  font-size: 16px;
+  text-align: center;
+  text-transform: capitalize;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: recipe 0.2s 15.5s forwards;
+          animation: recipe 0.2s 15.5s forwards;
+}
 
+@-webkit-keyframes recipe{
+  0%   { top:0; left:-300px;}
+  100% { top:200px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+}
 
-
-
+@keyframes recipe{
+  0%   { top:0; left:-300px;}
+  100% { top:200px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+}
 
 /*=================================
   main styling ends here
